@@ -5,9 +5,7 @@
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
         <title>GeoAR.js demo</title>
         <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@df3e8672b77568845e5e360f54f4456fd4829a38/dist/aframe-master.min.js"></script>
-        <script type="application/javascript">
-            THREEx.ArToolkitContext.baseURL = 'https://raw.githack.com/jeromeetienne/ar.js/master/three.js/'
-        </script>
+        <script src="https://threejs.org/build/three.min.js"></script>
     </head>
 
     <body style='margin: 0; overflow: hidden;'>
@@ -15,10 +13,8 @@
             vr-mode-ui="enabled: false"
             embedded
             arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
-
-        <a-box color="yellow" scale="15 15 15" gps-entity-place="latitude: 44.493271; longitude: 11.326040;"></a-box>
-        <a-camera gps-camera rotation-reader>
-        </a-camera>
-    </a-scene>
+            <a-box color="yellow" scale="15 15 15" gps-entity-place="latitude: 44.493271; longitude: 11.326040;"></a-box>
+            <a-camera gps-camera rotation-reader></a-camera>
+        </a-scene>
     </body>
 </html>
