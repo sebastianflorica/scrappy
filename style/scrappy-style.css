@@ -57,9 +57,9 @@
 /* Map screen styles */
 
   .map-marker {
-    background-image: url('https://png2.cleanpng.com/sh/19abc0836b63f56e882e65a2a43855da/L0KzQYm3VMAzN5x3iZH0aYP2gLBuTgJmbF59Rd5udITogn7qjB1xfaVqip9yY3Bxg375hfQugF46edU7ZnK6RbO4WPE0QV83TKM9MkG4RIK8UsI4Omg8UakCMke1PsH1h5==/kisspng-red-x-letter-computer-icons-red-x-5ac2fb75b18a39.2414215415227277977272.png');
+    background-image: url('../assets/pin.svg');
     background-size: cover;
-    width: 20px;
+    width: 12px;
     height: 20px;
     cursor: pointer;
   }

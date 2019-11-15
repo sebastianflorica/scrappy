@@ -9,7 +9,6 @@ const map = new mapboxgl.Map({
   zoom: 11
 });
 
-
 const geojson = {
   type: 'Items to collect',
   items: [{
@@ -44,7 +43,7 @@ geojson.items.forEach(function(marker) {
   el.className = 'map-marker';
 
   // make a marker for each item and add to the map
-new mapboxgl.Marker(el)
+  new mapboxgl.Marker(el)
   .setLngLat(marker.geometry.coordinates)
   .addTo(map);
 });
