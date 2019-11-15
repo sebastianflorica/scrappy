@@ -10,6 +10,7 @@
 		<link rel="stylesheet" type="text/css" href="./style/scrappy-style.css">
 		<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
 		<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
+		<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
 		<script src="./scrappy-ar.js"></script>
 	</head>
 
@@ -23,7 +24,9 @@
 					<a-camera gps-camera rotation-reader></a-camera>
 				</a-scene>
 			</section>
-		<section id='map' style='width: 800px; height: 800px;'>
+		<section class="app-body">
+			<div class="app-body__header">Test i guess</div>
+			<div class="app-body__map" id='map'></div>
 			<script src="./scrappy-map.js"></script>
 		</section>
 		<section class="app-menu">
