@@ -19,50 +19,51 @@
   width: 375px;
 }
 
-.splash {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 812px;
-  margin: 0px auto;
-  width: 375px;
-  background: linear-gradient(21.06deg, #F5527F -131.6%, #303238 67.16%);
-  font-size: 18px;
-}
+/* Splash screen styles */
 
-.splash__logo {
+  .splash {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 812px;
+    margin: 0px auto;
+    width: 375px;
+    background: linear-gradient(21.06deg, #F5527F -131.6%, #303238 67.16%);
+    font-size: 18px;
+  }
 
-}
+  .splash__text {
+    color: #A9A3A5;
+    font-size: 18px;
+    margin-top: 36px;
+    width: 300px;
+    text-align: center;
+  }
 
-.splash__text {
-  color: #A9A3A5;
-  font-size: 18px;
-  margin-top: 36px;
-  width: 300px;
-  text-align: center;
-}
+  .splash__button {
+    margin-top: 180px;
+    border: 5px solid #F5527F;
+    box-sizing: border-box;
+    border-radius: 50px;
+    width: 153px;
+    height: 64px;
+    color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+    font-size: 24px;
+    letter-spacing: 0.04em;
+  }
 
-.splash__button {
-  margin-top: 180px;
-  border: 5px solid #F5527F;
-  box-sizing: border-box;
-  border-radius: 50px;
-  width: 153px;
-  height: 64px;
-  color: #FFF;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 800;
-  font-size: 24px;
-  letter-spacing: 0.04em;
-}
+  
+/* Map screen styles */
 
-.map-marker {
-  background-image: url('https://png2.cleanpng.com/sh/19abc0836b63f56e882e65a2a43855da/L0KzQYm3VMAzN5x3iZH0aYP2gLBuTgJmbF59Rd5udITogn7qjB1xfaVqip9yY3Bxg375hfQugF46edU7ZnK6RbO4WPE0QV83TKM9MkG4RIK8UsI4Omg8UakCMke1PsH1h5==/kisspng-red-x-letter-computer-icons-red-x-5ac2fb75b18a39.2414215415227277977272.png');
-  background-size: cover;
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-}
+  .map-marker {
+    background-image: url('https://png2.cleanpng.com/sh/19abc0836b63f56e882e65a2a43855da/L0KzQYm3VMAzN5x3iZH0aYP2gLBuTgJmbF59Rd5udITogn7qjB1xfaVqip9yY3Bxg375hfQugF46edU7ZnK6RbO4WPE0QV83TKM9MkG4RIK8UsI4Omg8UakCMke1PsH1h5==/kisspng-red-x-letter-computer-icons-red-x-5ac2fb75b18a39.2414215415227277977272.png');
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
