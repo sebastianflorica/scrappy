@@ -38,9 +38,14 @@ const geojson = {
 // THIS CODE IS ADDING PINS TO THE MAP
 geojson.items.forEach(function(marker) {
 
-  // creating element for the map marker/pin/whatever its called
+  
   var el = document.createElement('div');
-  el.className = 'map-marker';
+
+  if (marker.type == 'Big item' ) {
+    el.className = 'map-marker';
+  } else {
+    el.className = 'map-marker__red';
+  }
 
   // make a marker for each item and add to the map
   new mapboxgl.Marker(el)

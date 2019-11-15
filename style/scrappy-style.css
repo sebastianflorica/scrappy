@@ -63,3 +63,11 @@
     height: 20px;
     cursor: pointer;
   }
+
+  .map-marker__red {
+    background-image: url('../assets/redpin.svg');
+    background-size: cover;
+    width: 12px;
+    height: 20px;
+    cursor: pointer;
+  }
