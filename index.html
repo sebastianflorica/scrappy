@@ -4,8 +4,6 @@
 		<meta charset='utf-8'>
 		<meta http-equiv='X-UA-Compatible' content='IE=edge'>
 		<title>Scrappy - Geo AR</title>
-		<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@df3e8672b77568845e5e360f54f4456fd4829a38/dist/aframe-master.min.js"></script>
-		<script type="application/javascript" src="https://threejs.org/build/three.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="./style/scrappy-style.css">
 		<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
 		<link href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" rel="stylesheet">
@@ -16,19 +14,15 @@
 
 	<body class="app">
 		<section class="app-ar">
-				<a-scene
-					vr-mode-ui="enabled: false"
-					embedded
-					arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
-					<a-box color="yellow" scale="15 15 15" gps-entity-place="latitude: 44.493271; longitude: 11.326040;"></a-box>
-					<a-camera gps-camera rotation-reader></a-camera>
-				</a-scene>
-			</section>
+			<a href="./scrappy-ar.html">Take photo</a>
+		</section>
+
 		<section class="splash">
 			<img class="splash__logo" src='assets/logo.svg	'/>
 			<div class="splash__text">Fast and easy way to get new and get rid of old stuff</div>
 			<div class="splash__button">enter</div>
 		</section>
+
 		<section class="app-body">
 			<div class="app-body__header">Test i guess</div>
 			<div class="app-body__map" id='map'></div>
