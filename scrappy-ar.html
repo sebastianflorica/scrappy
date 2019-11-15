@@ -1,16 +1,15 @@
 <html>
     <head>
-        <title>Scrappy - AR</title>
-        <script type="application/javascript" src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
-        <script type="application/javascript" src="https://threejs.org/build/three.min.js"></script>
+        <title>Scrappy</title>
+        <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+        <script src="https://raw.githack.com/jeromeetienne/AR.js/2.0.8/aframe/build/aframe-ar.js"></script>
     </head>
-    <body>
-        <section class="app-ar">
-            <a-scene loading-screen="dotsColor: red; backgroundColor: black">
-                <a-entity position="0 0 0">
-                    <a-camera></a-camera>
-                </a-entity>
-            </a-scene>
-        </section>
+    <body style='margin : 0px; overflow: hidden;'>
+        <a-scene embedded arj loading-screen="dotsColor: red; backgroundColor: black">
+            <a-marker preset="hiro">
+                <a-box position='0 0.5 0' material='color: yellow;'></a-box>
+            </a-marker>
+            <a-entity camera></a-entity>
+        </a-scene>
     </body>
 </html>
