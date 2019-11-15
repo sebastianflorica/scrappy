@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 .app-ar {
@@ -10,13 +11,52 @@
 .app-body__header {
   text-align: center;
   font-size: 40px;
-  font-family: 'Courier New', Courier, monospace;
 }
 
 .app-body__map {
   height: 812px;
   margin: 0px auto;
   width: 375px;
+}
+
+.splash {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 812px;
+  margin: 0px auto;
+  width: 375px;
+  background: linear-gradient(21.06deg, #F5527F -131.6%, #303238 67.16%);
+  font-size: 18px;
+}
+
+.splash__logo {
+
+}
+
+.splash__text {
+  color: #A9A3A5;
+  font-size: 18px;
+  margin-top: 36px;
+  width: 300px;
+  text-align: center;
+}
+
+.splash__button {
+  margin-top: 180px;
+  border: 5px solid #F5527F;
+  box-sizing: border-box;
+  border-radius: 50px;
+  width: 153px;
+  height: 64px;
+  color: #FFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+  font-size: 24px;
+  letter-spacing: 0.04em;
 }
 
 .map-marker {
