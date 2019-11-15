@@ -6,28 +6,22 @@
 		<title>Scrappy - Geo AR</title>
 		<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@df3e8672b77568845e5e360f54f4456fd4829a38/dist/aframe-master.min.js"></script>
 		<script type="application/javascript" src="https://threejs.org/build/three.min.js"></script>
-		<script type="text/html" src="scrappy-ar.html"></script>
 		<link rel="stylesheet" type="text/css" href="./style/scrappy-style.css">
 		<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
 		<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
-		<script src="./scrappy-ar.js"></script>
-		<script type="text/javascript" src="./script/scrappy-cors.js"></script>
+		<script src="./script/scrappy-ar.js"></script>
 		<script type="text/javascript" src="./scrappy-map.js"></script>
 	</head>
 
 	<body class="app">
 		<section class="app-ar">
-				<a-scene
-					vr-mode-ui="enabled: false"
-					embedded
-					arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
-					<a-box color="yellow" scale="15 15 15" gps-entity-place="latitude: 44.493271; longitude: 11.326040;"></a-box>
-					<a-camera gps-camera rotation-reader></a-camera>
-				</a-scene>
-			</section>
+			<script type="text/html" src="./scrappy-ar.html"></script>
+		</section>
+
 		<section id='map' style='width: 800px; height: 800px;'>
 			<script src="./scrappy-map.js"></script>
 		</section>
+
 		<section class="app-menu">
 		</section>
 	</body>
