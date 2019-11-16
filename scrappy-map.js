@@ -19,6 +19,7 @@ async function getData() {
 
       var popupHtml = '<img height="270px" width="270px" src="http://134.209.242.120'+ marker.imageURL +'"></img>'
       var popup = new mapboxgl.Popup({offset: 25}).setHTML(popupHtml);
+      
 
       let el = document.createElement('div');
 
@@ -34,6 +35,8 @@ async function getData() {
       .setLngLat(marker.geo)
       .addTo(map)
       .setPopup(popup);
+
+
     });
   } else {
     alert("HTTP-Error: " + response.status);

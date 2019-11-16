@@ -161,7 +161,9 @@ h1 {
     cursor: pointer;
   }
 
-
+  .mapboxgl-popup, .mapboxgl-popup-anchor-top {
+    max-width: unset !important;
+  }
 
   .app-body__map {
     height: 70vh;
@@ -170,18 +172,16 @@ h1 {
     border-radius: 60px;
   }
 
-
-
   /* products page */
-.products {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 5vh;
-}
-.product {
-  width: 45%;
-  height: 60vh;
-  background: #2A2D32;
-  margin: 20px;
-  border-radius: 50px;
-}
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5vh;
+  }
+  .product {
+    width: 45%;
+    height: 60vh;
+    background: #2A2D32;
+    margin: 20px;
+    border-radius: 50px;
+  }
