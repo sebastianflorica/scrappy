@@ -10,7 +10,7 @@ async function getData() {
       // var img = document.createElement("img");  
       // img.setAttribute("src", `http://134.209.242.120${marker.imageURL}`);
       // node.appendChild(img); 
-      node.style.background = `url('http://134.209.242.120${marker.imageURL}') center center`;                           
+      node.style.background = `url('http://134.209.242.120${marker.imageURL}') center center no-repeat`;                           
       document.getElementById("products").appendChild(node);
 
     });
