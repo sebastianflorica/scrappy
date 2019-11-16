@@ -40,8 +40,8 @@ async function post(method='post') {
 
   let formdata = new FormData();
   formdata.append('image', blob, 'image.png');
-  formdata.append('coords[0]', 10.16201);
-  formdata.append('coords[1]', 56.169);
+  formdata.append('coords[0]', 10.187791);
+  formdata.append('coords[1]', 56.172292);
   formdata.append('type', 'small');
   
   let tags = await fetch('https://visual-recognition-service.herokuapp.com', {
