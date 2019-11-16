@@ -1,3 +1,5 @@
+
+
 const ACCESS_TOKEN = "pk.eyJ1Ijoic2NyYXBweXBsZWFzZSIsImEiOiJjazMwZ3c4OGEwN2pyM25yY3U0N3Fqb2h6In0.ZpsqtTQg6Mbt6iTwqYye2w";
 
 mapboxgl.accessToken = ACCESS_TOKEN;
@@ -46,23 +48,31 @@ const geojson = {
   }]
 }
 
-// THIS CODE IS ADDING PINS TO THE MAP
-geojson.items.forEach(function(marker) {
-
+async function please() {
+  let response = await fetch('http://134.209.242.120');
+  if (response.ok) { // if HTTP-status is 200-299
+    // get the response body (the method explained below)
+    var json = await response.json();
+    json.forEach(function(marker) {
+    
+      var el = document.createElement('div');
+      
+      if (marker.type == 'Large' ) {
+        el.className = 'map-marker';
+      } else if (marker.type == 'Small' ) {
+        el.className = 'map-marker__red';
+      } else {
+        el.className = 'map-marker__shrek';
+      }
   
-  var el = document.createElement('div');
-  
-  if (marker.type == 'Large' ) {
-    el.className = 'map-marker';
-  } else if (marker.type == 'Small' ) {
-    el.className = 'map-marker__red';
+      // make a marker for each item and add to the map
+      new mapboxgl.Marker(el)
+      .setLngLat(marker.geo)
+      .addTo(map);
+    });
   } else {
-    el.className = 'map-marker__shrek';
+    alert("HTTP-Error: " + response.status);
   }
+}
 
-  // make a marker for each item and add to the map
-  new mapboxgl.Marker(el)
-  .setLngLat(marker.geometry.coordinates)
-  .addTo(map);
-});
-  
+please();
