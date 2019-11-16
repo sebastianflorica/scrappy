@@ -24,34 +24,6 @@ const map = new mapboxgl.Map({
   zoom: 11
 });
 
-
-const geojson = {
-  type: 'Items to collect',
-  items: [{
-      type: 'Big item',
-      geometry: {
-        type: 'Point',
-        coordinates: [10.183491, 56.127352]
-      },
-      properties: {
-        title: 'Wardrobe',
-        // description: 'Just some wardrobe left on the streets'
-      }
-    },
-    {
-      type: 'Small item',
-      geometry: {
-        type: 'Point',
-        coordinates: [10.212405079081918, 56.15020856422052]
-      },
-      properties: {
-        title: 'Small item',
-        // description: 'Your moms underpants haha'
-      }
-    }
-  ]
-}
-
 please().then((json) => {
   json.items.forEach(function (marker) {
     let el = document.createElement('div');
@@ -63,12 +35,20 @@ please().then((json) => {
 // THIS CODE IS ADDING PINS TO THE MAP
 // geojson.items.forEach(function(marker) {
 
-//   // creating element for the map marker/pin/whatever its called
-//   var el = document.createElement('div');
-//   el.className = 'map-marker';
+  
+  var el = document.createElement('div');
+  
+  if (marker.type == 'Large' ) {
+    el.className = 'map-marker';
+  } else if (marker.type == 'Small' ) {
+    el.className = 'map-marker__red';
+  } else {
+    el.className = 'map-marker__shrek';
+  }
 
-//   // make a marker for each item and add to the map
-// new mapboxgl.Marker(el)
-//   .setLngLat(marker.geometry.coordinates)
-//   .addTo(map);
-// });
+  // make a marker for each item and add to the map
+  new mapboxgl.Marker(el)
+  .setLngLat(marker.geometry.coordinates)
+  .addTo(map);
+});
+  
