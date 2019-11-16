@@ -16,8 +16,11 @@ const params = {
 
 // Build a server with Node's HTTP module
 const http = require('http');
-const port = 3001;
 const server = http.createServer();
+
+// set the port of our application
+// process.env.PORT lets the port be set by Heroku
+const port = process.env.PORT || 8080;
 
 server.on('request', (request, response) => {
     console.log(`URL: ${request.url}`);
