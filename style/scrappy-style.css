@@ -135,28 +135,29 @@ h1 {
 }
 
   .map-marker__large {
-    background-image: url('../assets/redpin.svg');
+    background-image: url('../assets/33.svg');
     background-size: cover;
-    width: 12px;
-    height: 20px;
+    width: 25px; 
+    min-height: 40px;
+    max-height: 8.9vw;
     cursor: pointer;
   }
 
   .map-marker__medium {
-    background-image: url('../assets/pin.svg');
+    background-image: url('../assets/22.svg');
     background-size: cover;
-    width: 12px;
-    height: 20px;
+    width: 25px; 
+    min-height: 40px;
+    max-height: 8.9vw;
     cursor: pointer;
   }
 
-
-
   .map-marker__small {
-    background-image: url('../assets/shrekpin.svg');
+    background-image: url('../assets/11.svg');
     background-size: cover;
-    width: 12px;
-    height: 20px;
+    width: 25px; 
+    min-height: 40px;
+    max-height: 8.9vw;
     cursor: pointer;
   }
 
@@ -179,7 +180,7 @@ h1 {
 }
 .product {
   width: 45%;
-  height: 30vh;
+  height: 60vh;
   background: #2A2D32;
   margin: 20px;
   border-radius: 50px;
