@@ -37,8 +37,11 @@ a {
   font-size: 30px;
   height: 50px;
   bottom: 150px;
-  left: 180px;
+  left: 90px;
   align-items: center;
+  border: 5px solid gray;
+  border-radius: 10px;
+  padding: 20px;
 }
 
 /* Splash screen styles */
@@ -126,12 +129,23 @@ a {
 .navigation__icon {
   width: 80px;
   height: 80px;
+  max-height: 80px;
   opacity: .4;
 }
 .navigation__active-link {
   opacity: 1;
 }
 .navigation__active:before{
+  content: "";
+  position: absolute;
+  height: 15px;
+  width: 90px;
+  background: #fff;
+  bottom: -4px;
+  box-shadow: 0px -6px 15px #F5527F;
+}
+
+.active {
   content: "";
   position: absolute;
   height: 15px;
@@ -200,11 +214,12 @@ h1 {
   .products {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 5vh;
+    margin-top: 5px;
   }
   .product {
     width: 45%;
     height: 60vh;
+    max-height: 500px;
     background: #2A2D32;
     margin: 20px;
     border-radius: 50px;

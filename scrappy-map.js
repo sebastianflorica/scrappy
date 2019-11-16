@@ -8,8 +8,6 @@ var map = new mapboxgl.Map({
   zoom: 16
 });
 
-
-
 async function getData() {
   let response = await fetch('http://134.209.242.120');
   if (response.ok) { 
@@ -19,15 +17,14 @@ async function getData() {
 
       var popupHtml = '<img height="270px" width="270px" src="http://134.209.242.120'+ marker.imageURL +'"></img>'
       var popup = new mapboxgl.Popup({offset: 25}).setHTML(popupHtml);
-      
 
       let el = document.createElement('div');
 
-      if (marker.type == 'large' ) {
+      if (marker.type == 'large' || marker.tags.indludes("sofa") || marker.tags.indludes("bed")) {
         el.className = 'map-marker__large';
-      } else if (marker.type == 'small' ) {
+      } else if (marker.type == 'small' || marker.tags.indludes(" ")) {
         el.className = 'map-marker__small';
-      } else {
+      } else  if (marker.type == 'medium' || marker.tags.indludes("chair") || marker.tags.indludes("stool")) {
         el.className = 'map-marker__medium';
       }
   
