@@ -12,7 +12,7 @@ const map = new mapboxgl.Map({
 const geojson = {
   type: 'Items to collect',
   items: [{
-    type: 'Big item',
+    type: 'Large',
     geometry: {
       type: 'Point',
       coordinates: [10.183491, 56.127352]
@@ -23,7 +23,18 @@ const geojson = {
     }
   },
   {
-    type: 'Small item',
+    type: 'Medium',
+    geometry: {
+      type: 'Point',
+      coordinates: [10.193591, 56.127352]
+    },
+    properties: {
+      title: 'Wardrobe',
+      // description: 'Just some wardrobe left on the streets'
+    }
+  },
+  {
+    type: 'Small',
     geometry: {
       type: 'Point',
       coordinates: [10.212405079081918, 56.15020856422052]
@@ -40,11 +51,13 @@ geojson.items.forEach(function(marker) {
 
   
   var el = document.createElement('div');
-
-  if (marker.type == 'Big item' ) {
+  
+  if (marker.type == 'Large' ) {
     el.className = 'map-marker';
-  } else {
+  } else if (marker.type == 'Small' ) {
     el.className = 'map-marker__red';
+  } else {
+    el.className = 'map-marker__shrek';
   }
 
   // make a marker for each item and add to the map

@@ -71,3 +71,11 @@
     height: 20px;
     cursor: pointer;
   }
+
+  .map-marker__shrek {
+    background-image: url('../assets/shrekpin.svg');
+    background-size: cover;
+    width: 12px;
+    height: 20px;
+    cursor: pointer;
+  }
