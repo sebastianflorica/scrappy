@@ -13,10 +13,27 @@ const params = {
     imagesFile: fs.createReadStream('./images/test.jpg')
 };
 
-visualRecognition.classify(params)
-    .then(response => {
-        console.log(JSON.stringify(response.result, null, 2));
-    })
-    .catch(err => {
-        console.log(err);
-    });
+
+// Build a server with Node's HTTP module
+const http = require('http');
+const port = 3001;
+const server = http.createServer();
+
+server.on('request', (request, response) => {
+    console.log(`URL: ${request.url}`);
+    
+    visualRecognition.classify(params)
+        .then(responseFromIBM => {
+            response.end(JSON.stringify(responseFromIBM.result, null, 2));
+        })
+        .catch(err => {
+            response.end(err);
+        });
+});
+
+// Start the server
+server.listen(port, (error) => {
+    if (error) return console.log(`Error: ${error}`);
+
+    console.log(`Server is listening on port ${port}`)
+});
