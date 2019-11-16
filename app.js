@@ -23,6 +23,8 @@ const multer = require('multer');
 const upload = multer({ dest: './images/' });
 
 app.post('/', upload.single('image'), (request, response) => {
+    response.header('Access-Control-Allow-Origin', '*');
+    
     console.log(`URL: ${request.url}`);
     console.log('POST');
 
