@@ -15,6 +15,9 @@
   width: 375px;
 }
 
+a {
+  text-decoration: none;
+}
 /* Splash screen styles */
 
   .splash {
@@ -22,26 +25,36 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 812px;
-    margin: 0px auto;
-    width: 375px;
+    height: 100vh;
+    width: 100%;
     background: linear-gradient(21.06deg, #F5527F -131.6%, #303238 67.16%);
     font-size: 18px;
+  }
+.splash__content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+top: 25vh;
+}
+
+  .splash__logo {
+    width: 500px;
   }
 
   .splash__text {
     color: #A9A3A5;
-    font-size: 18px;
+    font-size: 40px;
     margin-top: 36px;
-    width: 300px;
+    width: 630px;
     text-align: center;
   }
 
   .splash__button {
-    margin-top: 180px;
-    border: 5px solid #F5527F;
+    border: 14px solid #F5527F;
     box-sizing: border-box;
-    border-radius: 50px;
+    border-radius: 70px;
     width: 153px;
     height: 64px;
     color: #FFF;
@@ -49,12 +62,77 @@
     justify-content: center;
     align-items: center;
     font-weight: 800;
-    font-size: 24px;
+    font-size: 40px;
     letter-spacing: 0.04em;
+    padding: 60px 150px;
   }
-
+  .align__button {
+    /* display: flex; */
+    position: absolute;
+    bottom: 12vh;
+  }
   
 /* Map screen styles */
+.app {
+  width: 100%;
+  background: #303338;
+}
+.map-screen__navigation {
+  width: 100%;
+  height: 9vh;
+  position: fixed;
+  bottom: 0;
+  background: #303338;
+  /* background: green; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+.navigation__content {
+  width: 70%;
+  height: 65%;
+  /* background: pink; */
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  position: absolute;
+  bottom: 0;
+}
+.navigation__icon {
+  width: 80px;
+  height: 80px;
+  opacity: .4;
+}
+.navigation__active-link {
+  opacity: 1;
+}
+.navigation__active:before{
+  content: "";
+  position: absolute;
+  height: 15px;
+  width: 90px;
+  background: #fff;
+  bottom: -4px;
+  box-shadow: 0px -6px 15px #F5527F;
+}
+
+.items__content {
+  width: 88%;
+  margin: 7vh auto;
+}
+h1 {
+  color: #fff;
+  font-size: 70px;
+}
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.map__button {
+  margin-left: 30px;
+}
 
   .map-marker__large {
     background-image: url('../assets/redpin.svg');
@@ -81,3 +159,28 @@
     height: 20px;
     cursor: pointer;
   }
+
+
+
+  .app-body__map {
+    height: 70vh;
+    width: 95%;
+    margin: auto;
+    border-radius: 60px;
+  }
+
+
+
+  /* products page */
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5vh;
+}
+.product {
+  width: 45%;
+  height: 30vh;
+  background: #2A2D32;
+  margin: 20px;
+  border-radius: 50px;
+}
