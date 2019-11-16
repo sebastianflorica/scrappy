@@ -1,26 +1,57 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" clas="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" type="text/css" href="./style/scrappy-style.css">
     <title>Document</title>
 </head>
-<body>
+<body class="dark">
 <div>
-    <video autoplay></video>
+    <video  autoplay></video>
     <canvas class="d-none"></canvas>
 </div>
 
 <img class="screenshot-image d-none" alt="">
 
 <div class="controls">
-    <button class="btn btn-outline-success screenshot" title="ScreenShot" onclick="screenshot()">Screenshot</button>
-</div>
 
+    <div class="screenshot" title="ScreenShot" onclick="screenshot()">ADD ITEM</div>
+</div>
+<div class="map-screen__navigation">
+        <div class="navigation__content">
+                <div>
+                        <a  href="./items__list.html">
+          <div class="navigation__active">
+            <img
+              class="navigation__icon navigation__active-link"
+              src="./images/icons/ush.png"
+              alt="shopping cart"
+            />
+          </div>
+        </a>
+                </div>
+        <div>
+            <a  href="./items__camera.html">
+                <img
+                    class="navigation__icon"
+                    src="./images/icons/addd.png"
+                    alt="add butotn"
+                />
+            </a>
+        </div>
+          <div>
+            <img
+              class="navigation__icon"
+              src="./images/icons/info.png"
+              alt="product info"
+            />
+          </div>
+        </div>
+      </div>
 <script src="https://unpkg.com/feather-icons"></script>
 <script src="./camera.js"></script>
 </body>

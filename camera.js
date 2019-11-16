@@ -7,14 +7,14 @@ async function askPermission() {
     const stream = await navigator.mediaDevices.getUserMedia({
       video: {
         width: { 
-          min: 1280,
-          ideal: 1920,
-          max: 2560,
+          min: 375,
+          ideal: 375,
+          max: 375,
         },
         height: {
-          min: 720,
+          min: 700,
           ideal: 1080,
-          max: 1440
+          max: 700
         },
         facingMode: 'environment'
       }
@@ -23,7 +23,7 @@ async function askPermission() {
   }
 }
 
-function screenshot() {
+async function screenshot() {
   console.log('fuck');
   canvas.width = video.videoWidth;
   canvas.height = video.videoHeight;
@@ -32,67 +32,57 @@ function screenshot() {
   // screenshotImage.src = canvas.toDataURL('image/webp');
   // screenshotImage.classList.remove('d-none');
   video.classList.add('d-none');
-  post('post');
+  await post('post');
 }
 
-function postCanvasToURL() {
-  // Convert canvas image to Base64
-  var img = canvas.toDataURL();
-  // Convert Base64 image to binary
-  return dataURItoBlob(img);
-}
+async function post(method='post') {
 
-function dataURItoBlob(dataURI) {
-// convert base64/URLEncoded data component to raw binary data held in a string
-var byteString;
-if (dataURI.split(',')[0].indexOf('base64') >= 0)
-    byteString = atob(dataURI.split(',')[1]);
-else
-    byteString = unescape(dataURI.split(',')[1]);
-// separate out the mime component
-var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
-// write the bytes of the string to a typed array
-var ia = new Uint8Array(byteString.length);
-for (var i = 0; i < byteString.length; i++) {
-    ia[i] = byteString.charCodeAt(i);
-}
-return new Blob([ia], {type:mimeString});
-}
+  let blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
 
-function post(method='post') {
+  let formdata = new FormData();
+  formdata.append('image', blob, 'image.png');
+  formdata.append('coords[0]', 10.16201);
+  formdata.append('coords[1]', 56.169);
+  formdata.append('type', 'small');
+  
+  let response = await fetch('http://134.209.242.120/upload', {
+    method: 'POST',
+    body: formdata
+  });
+  console.log(response);
 
   // The rest of this code assumes you are not using a library.
   // It can be made less wordy if you use one.
-  const form = document.createElement('form');
-  form.method = method;
-  form.action = 'http://134.209.242.120/upload';
+  // const form = document.createElement('form');
+  // form.method = method;
+  // form.action = 'http://134.209.242.120/upload';
 
-  const image = document.createElement('input');
-  image.type = 'file';
-  image.name = 'image';
-  image.value = canvas.toDataURL('image/png');
-  form.appendChild(image);
+  // const image = document.createElement('input');
+  // image.type = 'file';
+  // image.name = 'image';
+  // image.value = canvas.toDataURL('image/png');
+  // form.appendChild(image);
   
-  const coords_1 = document.createElement('input');
-  coords_1.type = 'text';
-  coords_1.name = 'coords[0]';
-  coords_1.value = '10.16201';
-  form.appendChild(coords_1);
+  // const coords_1 = document.createElement('input');
+  // coords_1.type = 'text';
+  // coords_1.name = 'coords[0]';
+  // coords_1.value = '10.16201';
+  // form.appendChild(coords_1);
 
-  const coords_2 = document.createElement('input');
-  coords_2.type = 'text';
-  coords_2.name = 'coords[1]';
-  coords_2.value = '56.169';
-  form.appendChild(coords_2);
+  // const coords_2 = document.createElement('input');
+  // coords_2.type = 'text';
+  // coords_2.name = 'coords[1]';
+  // coords_2.value = '56.169';
+  // form.appendChild(coords_2);
 
-  const type = document.createElement('input');
-  type.type = 'text';
-  type.name = 'type';
-  type.value = 'small';
-  form.appendChild(type);
+  // const type = document.createElement('input');
+  // type.type = 'text';
+  // type.name = 'type';
+  // type.value = 'small';
+  // form.appendChild(type);
 
-  document.body.appendChild(form);
-  form.submit();
+  // document.body.appendChild(form);
+  // form.submit();
 }
 
 askPermission();

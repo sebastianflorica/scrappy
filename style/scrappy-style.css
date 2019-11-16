@@ -18,6 +18,29 @@
 a {
   text-decoration: none;
 }
+
+.dark {
+    background: #2A2D32;
+}
+
+.controls {
+  color: white;
+  background: linear-gradient(21.06deg, #F5527F -131.6%, #303238 67.16%);
+}
+
+.screenshot {
+  display:flex;
+  justify-content: center;
+  position: absolute;
+  background: linear-gradient(21.06deg, #F5527F -131.6%, #303238 67.16%);
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 30px;
+  height: 50px;
+  bottom: 150px;
+  left: 180px;
+  align-items: center;
+}
+
 /* Splash screen styles */
 
   .splash {
@@ -30,14 +53,15 @@ a {
     background: linear-gradient(21.06deg, #F5527F -131.6%, #303238 67.16%);
     font-size: 18px;
   }
-.splash__content {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-top: 25vh;
-}
+  
+  .splash__content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 25vh;
+  }
 
   .splash__logo {
     width: 500px;
