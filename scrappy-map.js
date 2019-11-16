@@ -17,7 +17,7 @@ async function getData() {
 
     json.forEach(function(marker) {
 
-      var popupHtml = '<img height="200px" width="200px" src="http://134.209.242.120'+ marker.imageURL +'"></img>'
+      var popupHtml = '<img height="270px" width="270px" src="http://134.209.242.120'+ marker.imageURL +'"></img>'
       var popup = new mapboxgl.Popup({offset: 25}).setHTML(popupHtml);
 
       let el = document.createElement('div');
