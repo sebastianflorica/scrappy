@@ -23,16 +23,7 @@ async function askPermission() {
   }
 }
 
-async function getTags() {
-  let response = await fetch('https://visual-recognition-service.herokuapp.com');
-  let json = await response.json();
-  let generatedString = json.split(',');
-
-  return generatedString;
-}
-
 async function screenshot() {
-  console.log('fuck');
   canvas.width = video.videoWidth;
   canvas.height = video.videoHeight;
   canvas.getContext('2d').drawImage(video, 0, 0);
@@ -52,8 +43,20 @@ async function post(method='post') {
   formdata.append('coords[0]', 10.16201);
   formdata.append('coords[1]', 56.169);
   formdata.append('type', 'small');
-  formdata.append('tags', await getTags());
   
+  let tags = await fetch('https://visual-recognition-service.herokuapp.com', {
+    method: 'POST',
+    body: formdata
+  });
+  
+  tags = await tags.json();
+  let stringo = tags.images[0].classifiers[0].classes.map((item) => {
+    return item.class;
+  }).join(',');
+
+  formdata.append('tags', stringo);
+
+document.getElementById('absolutext').textContent = stringo;
   let response = await fetch('http://134.209.242.120/upload', {
     method: 'POST',
     body: formdata

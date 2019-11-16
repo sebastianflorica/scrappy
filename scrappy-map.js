@@ -20,11 +20,11 @@ async function getData() {
 
       let el = document.createElement('div');
 
-      if (marker.type == 'large' || marker.tags.indludes("sofa") || marker.tags.indludes("bed")) {
+      if (marker.type == 'large' ) {
         el.className = 'map-marker__large';
-      } else if (marker.type == 'small' || marker.tags.indludes(" ")) {
+      } else if (marker.type == 'small' ) {
         el.className = 'map-marker__small';
-      } else  if (marker.type == 'medium' || marker.tags.indludes("chair") || marker.tags.indludes("stool")) {
+      } else  if (marker.type == 'medium' ) {
         el.className = 'map-marker__medium';
       }
   

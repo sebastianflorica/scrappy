@@ -32,15 +32,15 @@ a {
   display:flex;
   justify-content: center;
   position: absolute;
-  background: linear-gradient(21.06deg, #F5527F -131.6%, #303238 67.16%);
+  background: white;
   font-family: 'Nunito Sans', sans-serif;
   font-size: 30px;
   height: 50px;
+  width: 50px;
   bottom: 150px;
-  left: 90px;
+  left: 165px;
   align-items: center;
-  border: 5px solid gray;
-  border-radius: 10px;
+  border-radius: 50%;
   padding: 20px;
 }
 
@@ -145,6 +145,16 @@ a {
   box-shadow: 0px -6px 15px #F5527F;
 }
 
+.navigation__active2:before{
+  content: "";
+  position: absolute;
+  height: 8px;
+  width: 38px;
+  background: #fff;
+  bottom: -4px;
+  box-shadow: 0px -6px 15px #F5527F;
+}
+
 .active {
   content: "";
   position: absolute;
@@ -175,7 +185,8 @@ h1 {
   .map-marker__large {
     background-image: url('../assets/33.svg');
     background-size: cover;
-    width: 35px; 
+    min-width: 35px; 
+    width: 2.188em; 
     min-height: 50px;
     max-height: 8.9vw;
     cursor: pointer;
@@ -184,7 +195,8 @@ h1 {
   .map-marker__medium {
     background-image: url('../assets/22.svg');
     background-size: cover;
-    width: 35px; 
+    min-width: 35px; 
+    width: 2.188em; 
     min-height: 50px;
     max-height: 8.9vw;
     cursor: pointer;
@@ -193,7 +205,8 @@ h1 {
   .map-marker__small {
     background-image: url('../assets/11.svg');
     background-size: cover;
-    width: 35px; 
+    min-width: 35px; 
+    width: 2.188em; 
     min-height: 50px;
     max-height: 8.9vw;
     cursor: pointer;
@@ -202,6 +215,20 @@ h1 {
   .mapboxgl-popup, .mapboxgl-popup-anchor-top {
     max-width: unset !important;
   }
+
+#absolutext {
+  color: black;
+  font-size: 20px;
+  width: 400px;
+  background-color: white;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+#absolutext > * {
+  width: 200px;
+}
 
   .app-body__map {
     height: 70vh;
