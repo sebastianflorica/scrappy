@@ -2,12 +2,12 @@
 const fs = require('fs');
 const VisualRecognitionV3 = require('ibm-watson/visual-recognition/v3');
 const { IamAuthenticator } = require('ibm-watson/auth');
-const config = require('./config.js');
+if (!process) process = require('./config.js');
 
 const visualRecognition = new VisualRecognitionV3({
-    url: config.API_URL,
+    url: process.env.API_URL,
     version: '2018-03-19',
-    authenticator: new IamAuthenticator({ apikey: config.API_KEY })
+    authenticator: new IamAuthenticator({ apikey: process.env.API_KEY })
 });
 
 

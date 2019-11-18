@@ -56,7 +56,7 @@ async function post(method='post') {
 
   formdata.append('tags', stringo);
 
-document.getElementById('absolutext').textContent = stringo;
+  document.getElementById('absolutext').textContent = stringo;
   let response = await fetch('http://134.209.242.120/upload', {
     method: 'POST',
     body: formdata
