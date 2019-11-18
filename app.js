@@ -2,11 +2,12 @@
 const fs = require('fs');
 const VisualRecognitionV3 = require('ibm-watson/visual-recognition/v3');
 const { IamAuthenticator } = require('ibm-watson/auth');
+const config = require('./config.js');
 
 const visualRecognition = new VisualRecognitionV3({
-    url: 'https://gateway.watsonplatform.net/visual-recognition/api',
+    url: config.API_URL,
     version: '2018-03-19',
-    authenticator: new IamAuthenticator({ apikey: 'N1dS58xbeIT2KyN_ndkIxyfoAYJ7TYEr_BXSPYyAtSnH' }),
+    authenticator: new IamAuthenticator({ apikey: config.API_KEY })
 });
 
 
@@ -24,7 +25,7 @@ const upload = multer({ dest: './images/' });
 
 app.post('/', upload.single('image'), (request, response) => {
     response.header('Access-Control-Allow-Origin', '*');
-    
+
     console.log(`URL: ${request.url}`);
     console.log('POST');
 
